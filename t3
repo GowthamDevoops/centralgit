@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ping_useage=$(df -h / | awk 'NR==2 { print $5 }' | cut -d'%' -f1)
+
+echo "Disk usage: $ping_useage%"
+
+if [ "$ping_useage" -ge 90 ]; then
+    echo "Disk usage is critical"
+elif [ "$ping_useage" -ge 70 ]; then
+    echo "Warning message"
+else
+    echo "Good condition"
+fi
+
