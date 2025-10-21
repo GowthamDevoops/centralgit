@@ -78,7 +78,7 @@ declare -a menu=("option 1 :Backup" "Option 2 : Restore "  "Option 3 : exit")
 
 select option in "${menu[@]}"
 do
-	case $Reply in
+	case $REPLY in
 	1)
 		sh firstscript.sh
 	#	echo "You select Backup"
